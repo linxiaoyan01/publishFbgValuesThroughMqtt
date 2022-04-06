@@ -202,5 +202,4 @@
   <select id="selectAllRecord" resultType="top.kaluna.pub.domain.FbgValueInfo">
     select * from fbg_value_info
   </select>
-
 </mapper>

@@ -34,8 +34,6 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.MDC;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -54,10 +52,8 @@ import javax.annotation.Resource;
 @Order(1)
 public class CollectDataRunner implements ApplicationRunner {
     @Resource
-    private WsService wsService;
-    @Autowired
     private FbgValueMapper fbgValueMapper;
-    @Autowired
+    @Resource
     private FbgValueInfoMapper fbgValueInfoMapper;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

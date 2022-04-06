@@ -1,10 +1,9 @@
 package top.kaluna.pub.mapper;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import top.kaluna.pub.domain.FbgValueInfo;
 import top.kaluna.pub.domain.FbgValueInfoExample;
-
-import java.util.List;
 
 public interface FbgValueInfoMapper {
     long countByExample(FbgValueInfoExample example);
