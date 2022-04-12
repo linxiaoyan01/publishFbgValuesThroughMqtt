@@ -2,9 +2,7 @@ package top.kaluna.pub.runner;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-import top.kaluna.pub.domain.FbgValue;
 
-import java.util.List;
 
 /**
  * @author Yuery

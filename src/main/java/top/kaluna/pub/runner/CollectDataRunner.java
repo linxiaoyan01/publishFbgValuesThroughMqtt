@@ -41,7 +41,6 @@ import org.springframework.stereotype.Component;
 import top.kaluna.pub.domain.FbgValue;
 import top.kaluna.pub.mapper.FbgValueInfoMapper;
 import top.kaluna.pub.mapper.FbgValueMapper;
-import top.kaluna.pub.service.WsService;
 import top.kaluna.pub.util.CommonUtil;
 import javax.annotation.Resource;
 
@@ -170,13 +169,13 @@ public class CollectDataRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        //目的是为了给 TOTALPHYSICVAL 赋值
+        //目的是为了给 TOTALPHYSICVAL 赋值 查看应变传感器的个数
         getTotal();
         //启动线程采集并发送给mqtt服务器
         start();
     }
 
     private void getTotal() {
-        TOTALPHYSICVAL = fbgValueInfoMapper.total();
+        TOTALPHYSICVAL = fbgValueInfoMapper.strainTotal();
     }
 }

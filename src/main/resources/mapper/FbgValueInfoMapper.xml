@@ -196,8 +196,8 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <select id="total" resultType="java.lang.Integer">
-    select count(*) from fbg_value_info
+  <select id="strainTotal" resultType="java.lang.Integer">
+    select sum(case when category = 1 then 1 else 0 end) from fbg_value_info
   </select>
   <select id="selectAllRecord" resultType="top.kaluna.pub.domain.FbgValueInfo">
     select * from fbg_value_info

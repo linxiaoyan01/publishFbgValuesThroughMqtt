@@ -20,7 +20,7 @@ public interface FbgValueInfoMapper {
 
     int updateByExample(@Param("record") FbgValueInfo record, @Param("example") FbgValueInfoExample example);
 
-    int total();
+    int strainTotal();
 
     List<FbgValueInfo> selectAllRecord();
 }
