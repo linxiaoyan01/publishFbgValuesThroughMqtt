@@ -1,4 +1,4 @@
-package top.kaluna.pub.runner;
+package top.kaluna.pub.connect;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -21,7 +21,7 @@ public class Publish {
         connOpts.setKeepAliveInterval(20);
 //      String[] uris = {"tcp://10.100.124.206:1883","tcp://10.100.124.207:1883"};
 //      connOpts.setServerURIs(uris);  //起到负载均衡和高可用的作用
-        String broker = "tcp://101.132.252.118:1883";
+        String broker = "tcp://43.138.101.236:1883";
         MqttClient mqttClient = new MqttClient(broker, "client-id-0", persistence);
         mqttClient.setCallback(new PushCallback("test0"));
         mqttClient.connect(connOpts);

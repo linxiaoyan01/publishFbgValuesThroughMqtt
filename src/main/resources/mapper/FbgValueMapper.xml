@@ -5,7 +5,7 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="physical_value_info_id" jdbcType="BIGINT" property="physicalValueInfoId" />
     <result column="value" jdbcType="DECIMAL" property="value" />
-    <result column="tag" jdbcType="TINYINT" property="tag" />
+    <result column="array_num" jdbcType="TINYINT" property="arrayNum" />
     <result column="create_time" jdbcType="BIGINT" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -217,10 +217,10 @@
   </select>
   <insert id="multipleInsert">
     insert into fbg_value
-    (physical_value_info_id, value, tag, create_time)
+    (physical_value_info_id, value, array_num, create_time,channel)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.physical_value_info_id},#{item.value},#{item.tag},#{item.create_time})
+      (#{item.physicalValueInfoId},#{item.value},#{item.arrayNum},#{item.createTime},#{item.channel})
     </foreach>
   </insert>
   <select id="temperatureNow" resultType="java.math.BigDecimal">
